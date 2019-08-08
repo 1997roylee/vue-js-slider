@@ -28,7 +28,10 @@ export default {
       type: String,
       default: "This is a VueSliderComponent title"
     },
-    slideImgs: Array,
+    slideImgs: {
+      type: Array,
+      default: []
+    },
     imgWidth: {
       type: Number,
       default: 360
@@ -69,9 +72,11 @@ export default {
     }
   },
   created() {
+    if (this.slideImgs.length == 0) return;
     this.count = this.slideImgs.length;
   },
   mounted() {
+    if (this.slideImgs.length == 0) return;
     this.count = this.slideImgs.length;
   }
 };
